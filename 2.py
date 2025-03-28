@@ -135,5 +135,8 @@ def actualizar_dashboard(ciudad, aliado, region):
     
     return f"{porcentaje:.2f}%", publico_objetivo, cargas_presenze, fig_barras, fig_lineas, ciudades_options, aliados_options, regiones_options
 
-if __name__ == '__main__':
-    app.run(debug=True)
+import os
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))  # Obtiene el puerto de Railway o usa 5000 por defecto
+    app.run(host="0.0.0.0", port=port)
